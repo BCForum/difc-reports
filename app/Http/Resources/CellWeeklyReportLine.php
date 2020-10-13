@@ -14,6 +14,17 @@ class CellWeeklyReportLine extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'weekly_report_id' => (int)$this->weekly_report_id,
+            'line_no' => (int)$this->line_no,
+            'person_type' => $this->person_type,
+            'person_id' => (int)$this->person_id,
+            'name' => $this->name,
+            'surname' => $this->surname,
+            'new_visitor_cell' => $this->new_visitor_cell,
+            'new_visitor_service' => $this->new_visitor_service,
+            'cell' => $this->cell,
+            'service' => $this->service,
+        ];
     }
 }

@@ -14,6 +14,10 @@ class CellDetail extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'cell_id' => (int)$this->cell_id,
+            'line_no' => (int)$this->line_no,
+            'person_id' => (int)$this->person_id
+        ]
     }
 }
