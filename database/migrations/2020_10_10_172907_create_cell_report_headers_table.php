@@ -13,7 +13,7 @@ class CreateCellReportHeadersTable extends Migration
      */
     public function up()
     {
-        Schema::create('cell_report_header', function (Blueprint $table) {
+        Schema::create('cell_report_headers', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('cell_id');
             $table->integer('sheperd_id');
@@ -22,7 +22,7 @@ class CreateCellReportHeadersTable extends Migration
             $table->date('submit_date');
             $table->string('holy_spirit_working');
             $table->string('message_to_snr_pastor');
-            $table->string('feedback');
+            $table->string('feedback')->nullable();
             $table->integer('contact_total');
             $table->integer('member_total');
             $table->integer('salvation_total');

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class WeeklyReportLine extends Model
 {
     use HasFactory;
-    protected $fillable = ['weekly_report_id','line_no','person_type','person_id','name','surname','new_visitor_cell','new_visitor_service','cell','service'];
+    protected $fillable = ['weekly_report_id','person_type','person_id','name','surname','new_visitor_cell','new_visitor_service','cell','service'];
 
     public function weeklyreport()
     {

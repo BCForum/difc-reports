@@ -13,12 +13,12 @@ class CreateCellsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cell', function (Blueprint $table) {
+        Schema::create('cells', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('sheperd_id');
-            $table->integer('spouse_id');
+            $table->integer('shepherd_id');
+            $table->integer('spouse_id')->nullable();
             $table->string('address');
-            $table->string('address_2');
+            $table->string('address_2')->nullable();
             $table->string('city');
             $table->string('post_code');
             $table->timestamps();

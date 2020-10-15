@@ -3,14 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\PersonType;
+
+use App\Models\PersonType;
 use App\Http\Resources\PersonType as PersonTypeResource;
+use App\Http\Resources\PersonTypeCollection;
 
 class PersonTypeController extends Controller
 {
     public function index()
     {
         return new PersonTypeCollection(PersonType::all());
+    }
+
+    public function show(Request $request, $code)
+    {
+        return new PersonTypeResource(PersonType::findOrFail($code));
     }
 
     public function store(Request $request)
@@ -25,4 +32,13 @@ class PersonTypeController extends Controller
                 ->response()
                 ->setStatusCode(201);
     }
+
+    public function delete($code)
+    {
+        $persontype = PersonType::findOrFail($code);
+        $persontype->delete();
+        return response()->json(null, 204);
+    }
+
+
 }

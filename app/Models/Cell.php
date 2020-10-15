@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Cell extends Model
 {
     use HasFactory;
-    protected $fillable = ['sheperd_id','spouse_id','address','address_2','city','post_code'];
+    protected $fillable = ['shepherd_id','spouse_id','address','address_2','city','post_code'];
 
     public function shepherd()
     {
-        return $this->belongsTo('\App\Models\Person','id','sheperd_id');
+        return $this->belongsTo('\App\Models\Person','shepherd_id');
     }
 
     public function members()

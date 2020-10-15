@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class CellDetail extends Model
 {
     use HasFactory;
-    protected $fillable = ['cell_id','line_no','person_id','person_type'];
+    protected $fillable = ['cell_id','person_id','person_type'];
 
     public function cell()
     {

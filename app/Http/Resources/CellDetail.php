@@ -15,9 +15,10 @@ class CellDetail extends JsonResource
     public function toArray($request)
     {
         return [
-            'cell_id' => (int)$this->cell_id,
-            'line_no' => (int)$this->line_no,
-            'person_id' => (int)$this->person_id
-        ]
+            'id' => $this->id,
+            'cell_id' =>$this->cell_id,
+            'person_id'=>$this->person_id,
+            'person_type'=>$this->person_type,
+        ];
     }
 }

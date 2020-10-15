@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class PersonType extends Model
 {
-    use HasFactory;
+    public $incrementing = false;
+    public $keyType = 'string';
+    protected $primaryKey = 'code';
     protected $fillable = ['code'];
 }

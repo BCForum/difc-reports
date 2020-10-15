@@ -13,8 +13,8 @@ class CreatePersonTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('person_type', function (Blueprint $table) {
-            $table->string('Code');
+        Schema::create('person_types', function (Blueprint $table) {
+            $table->string('code')->primary();
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ class CreatePersonTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('person_type');
+        Schema::dropIfExists('person_types');
     }
 }

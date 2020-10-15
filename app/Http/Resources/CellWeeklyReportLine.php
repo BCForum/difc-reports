@@ -16,7 +16,7 @@ class CellWeeklyReportLine extends JsonResource
     {
         return [
             'weekly_report_id' => (int)$this->weekly_report_id,
-            'line_no' => (int)$this->line_no,
+            'id' => (int)$this->id,
             'person_type' => $this->person_type,
             'person_id' => (int)$this->person_id,
             'name' => $this->name,

@@ -1,0 +1,158 @@
+POST http://localhost:8000/api/persontype
+Accept: application/json
+Content-Type: application/json
+
+{
+    "code":"member"
+}
+
+
+##########
+
+get Http://localhost:8000/api/persontype
+Accept: application/json
+
+###################
+
+get Http://localhost:8000/api/persontype/pastor
+Accept: application/json
+
+#################
+
+POST http://localhost:8000/api/person
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name":"Jaco",
+    "surname":"Botha",
+    "phone_no": "07951122855",
+    "person_type": "shepherd",
+    "date_of_birth": "1995/07/13"
+}
+
+#################
+
+POST http://localhost:8000/api/person
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name":"Christelle",
+    "surname":"Botha",
+    "phone_no": "0662295229",
+    "person_type": "shepherd",
+    "date_of_birth": "1995/01/12"
+}
+
+#################
+
+POST http://localhost:8000/api/person
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name":"Phillip",
+    "surname":"Smal",
+    "phone_no": "07951122855",
+    "person_type": "shepherd",
+    "date_of_birth": "1995/07/13"
+}
+
+#################
+
+POST http://localhost:8000/api/person
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name":"Yvonne",
+    "surname":"Smal",
+    "phone_no": "0662295229",
+    "person_type": "shepherd",
+    "date_of_birth": "1995/01/12"
+}
+
+
+
+##########
+
+get Http://localhost:8000/api/person
+Accept: application/json
+
+###################
+
+get Http://localhost:8000/api/person/1
+Accept: application/json
+
+###################
+
+get Http://localhost:8000/api/person/3/cells
+Accept: application/json
+
+
+#################
+
+POST http://localhost:8000/api/cell
+Accept: application/json
+Content-Type: application/json
+
+{
+    "shepherd_id":1,
+    "spouse_id":2,
+    "address": "833 26th Avenue",
+    "city": "pta",
+    "post_code": "0082"
+}
+
+#################
+
+POST http://localhost:8000/api/cell
+Accept: application/json
+Content-Type: application/json
+
+{
+    "shepherd_id":3,
+    "spouse_id":4,
+    "address": "430 Kipa street",
+    "city": "pta",
+    "post_code": "0082"
+}
+
+##########
+
+get Http://localhost:8000/api/cell
+Accept: application/json
+
+###################
+
+get Http://localhost:8000/api/cell/1
+Accept: application/json
+
+###################
+
+get Http://localhost:8000/api/cell/2/shepherd
+Accept: application/json
+
+###############
+###################
+
+get Http://localhost:8000/api/cell/2/members
+Accept: application/json
+
+#################
+
+#post http://localhost:8000/api/celldetail
+POST http://localhost:8000/api/celldetail
+Accept: application/json
+Content-Type: application/json
+
+{"cell_id":2,
+"person_id":4,
+"person_type":"shepherd"}
+
+############
+get http://localhost:8000/api/celldetail/2
+Accept: application/json
+
+#############

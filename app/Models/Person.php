@@ -17,7 +17,7 @@ class Person extends Model
 
     public function cells()
     {
-        return $this->hasMany('\App\Models\Cell','sheperd_id');
+        return $this->hasMany('\App\Models\Cell','shepherd_id','id');
     }
 
     public function cell()

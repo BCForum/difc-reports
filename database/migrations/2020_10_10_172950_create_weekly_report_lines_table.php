@@ -13,7 +13,8 @@ class CreateWeeklyReportLinesTable extends Migration
      */
     public function up()
     {
-        Schema::create('weekly_report_line', function (Blueprint $table) {
+        Schema::create('weekly_report_lines', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('weekly_report_id');
             $table->integer('line_no');
             $table->string('person_type');
@@ -25,6 +26,7 @@ class CreateWeeklyReportLinesTable extends Migration
             $table->boolean('cell');
             $table->boolean('service');
             $table->timestamps();
+            $table->index(['weekly_report_id','id']);
         });
     }
 
@@ -35,6 +37,6 @@ class CreateWeeklyReportLinesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('weekly_report_line');
+        Schema::dropIfExists('weekly_report_lines');
     }
 }

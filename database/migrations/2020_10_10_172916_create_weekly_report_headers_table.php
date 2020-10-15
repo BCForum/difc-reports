@@ -13,7 +13,7 @@ class CreateWeeklyReportHeadersTable extends Migration
      */
     public function up()
     {
-        Schema::create('weekly_report_header', function (Blueprint $table) {
+        Schema::create('weekly_report_headers', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('cell_id');
             $table->integer('sheperd_id');
@@ -30,6 +30,6 @@ class CreateWeeklyReportHeadersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('weekly_report_header');
+        Schema::dropIfExists('weekly_report_headers');
     }
 }

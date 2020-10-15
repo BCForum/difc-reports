@@ -13,15 +13,16 @@ class CreateCellReportLinesTable extends Migration
      */
     public function up()
     {
-        Schema::create('cell_report_line', function (Blueprint $table) {
+        Schema::create('cell_report_lines', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('cell_report_id');
-            $table->integer('line_no');
             $table->string('person_type');
             $table->integer('person_id');
             $table->string('name');
             $table->string('surname');
-            $table->boolean('new_visitor');
+            $table->boolean('new_visitor')->nullable();
             $table->timestamps();
+            $table->index(['cell_report_id','id']);
         });
     }
 
@@ -32,6 +33,6 @@ class CreateCellReportLinesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cell_report_line');
+        Schema::dropIfExists('cell_report_lines');
     }
 }

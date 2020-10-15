@@ -14,11 +14,12 @@ class CreateCellDetailsTable extends Migration
     public function up()
     {
         Schema::create('cell_details', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('cell_id');
-            $table->integer('line_no');
             $table->integer('person_id');
             $table->string('person_type');
             $table->timestamps();
+            $table->index(['cell_id','id']);
         });
     }
 
